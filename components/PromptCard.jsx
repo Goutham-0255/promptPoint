@@ -7,3 +7,7 @@ const PromptCard = () => {
 }
 
 export default PromptCard
+
+
+
+hihhnh
