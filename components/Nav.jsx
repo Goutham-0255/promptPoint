@@ -18,6 +18,7 @@ const Nav = () => {
 
       setProviders(response);
     }
+
   }, [])
 
   return (
@@ -75,7 +76,7 @@ const Nav = () => {
         
         </div>
 
-      {/* Desktop Navigation */}
+      {/* Mobile Navigation */}
       
 
       <div className='sm:hidden flex relative'>
@@ -83,8 +84,8 @@ const Nav = () => {
           <div className='flex'>
             <Image
               src="assets/images/logo.svg"
-              width={35}
-              height={35}
+              width={37}
+              height={37}
               className='rounded-full'
               alt='profile'
               onClick={() => settoggleDropdown((prev) => 
@@ -92,7 +93,7 @@ const Nav = () => {
               />
 
                 {toggleDropdown && (
-                  <div className='dropDown'>
+                  <div className='dropdown'>
                     <Link
                       href="/profile"
                       className='dropdown_link'
@@ -151,6 +152,3 @@ const Nav = () => {
 }
 
 export default Nav
-
-
-himin
