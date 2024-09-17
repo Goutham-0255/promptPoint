@@ -1,21 +1,26 @@
 import Provider from "@components/Provider";
-import nextAuth from "next-auth";
+import NextAuth from "next-auth";
 import { signIn } from "next-auth/react";
-import GoogleProvider from 'nextAuth/providers/google';
+import GoogleProvider from "next-auth/providers/google";
 
+import {connectaTODB} from 'utils/database'
 
 
 const handler = NextAuth({
-    Providers: [
+    providers: [
         GoogleProvider({
-            clientId: '',
-            clientSecret: '',
+            clientId: process.env.GOOGLE_ID,
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET,
         })
     ],
     async session({ session }) {
 
     },async signIn({ profile }){
-
+        try {
+            
+        } catch (error) {
+            
+        }
     }
 })
 
