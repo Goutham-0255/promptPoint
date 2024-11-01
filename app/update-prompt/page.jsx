@@ -12,6 +12,8 @@ const UpdatePrompt = () => {
 
   const [post, setPost] = useState({ prompt: "", tag: "", });
   const [submitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState(null); // For error messages
+
 
   useEffect(() => {
     const getPromptDetails = async () => {
@@ -30,12 +32,17 @@ const UpdatePrompt = () => {
   const updatePrompt = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError(null); // Reset error state
+
 
     if (!promptId) return alert("Missing PromptId!");
 
     try {
       const response = await fetch(`/api/prompt/${promptId}`, {
         method: "PATCH",
+        headers: {
+          "content-type": "application/json",
+        },
         body: JSON.stringify({
           prompt: post.prompt,
           tag: post.tag,
