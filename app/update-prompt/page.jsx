@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
 import Form from "@components/Form";
@@ -60,14 +60,25 @@ const UpdatePrompt = () => {
   };
 
   return (
+  <>
+    {error && <p className="text-red-500">{error}</p>}
     <Form
-      type='Edit'
+      type="Edit"
       post={post}
       setPost={setPost}
       submitting={submitting}
       handleSubmit={updatePrompt}
     />
+  </>
   );
 };
 
-export default UpdatePrompt;
+const UpdatePromptWrapper = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <UpdatePrompt />
+    </Suspense>
+  );
+};
+
+export default UpdatePromptWrapper;
