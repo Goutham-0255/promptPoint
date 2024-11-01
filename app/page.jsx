@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <section className="w-full flex-center flex-col">
       <h1 className="head_text text-center">
-        Discover & Share 
+        Explore & share 
         <br className="max-md:block" />
         <span className="orange_gradient text-center">
          AI powered prompts
@@ -12,7 +12,7 @@ const Home = () => {
       </h1>
 
       <p className="desc text-center">
-        Promptopia is an opensource AI prompting tool for modern world to discover, create and share creative prompts
+        PromptPoint is an open-source AI tool for today’s world, letting you discover, create, and share engaging prompts 
       </p>
 
     <Feed/>

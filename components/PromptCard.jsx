@@ -27,7 +27,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
   };
 
   return (
-    <div className='prompt_card'>
+    <div className='prompt_card bg-gray-800 rounded-lg p-5 shadow-md'>
       <div className='flex justify-between items-start gap-5'>
         <div
           className='flex-1 flex justify-start items-center gap-3 cursor-pointer'
@@ -42,10 +42,10 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
           />
 
           <div className='flex flex-col'>
-            <h3 className='font-satoshi font-semibold text-gray-900'>
+            <h3 className='font-satoshi font-semibold text-white'>
               {post.creator.username}
             </h3>
-            <p className='font-inter text-sm text-gray-500'>
+            <p className='font-inter text-sm text-gray-400'>
               {post.creator.email}
             </p>
           </div>
@@ -65,7 +65,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
         </div>
       </div>
 
-      <p className='my-4 font-satoshi text-sm text-gray-700'>{post.prompt}</p>
+      <p className='my-4 font-satoshi text-sm text-gray-300'>{post.prompt}</p>
       <p
         className='font-inter text-sm blue_gradient cursor-pointer'
         onClick={() => handleTagClick && handleTagClick(post.tag)}

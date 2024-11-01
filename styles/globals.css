@@ -15,14 +15,14 @@
   display: flex;
   justify-content: center;
   padding: 120px 24px 160px 24px;
-  pointer-events: none;
+  /*pointer-events: none;*/
 }
 
 .main:before {
-  background: radial-gradient(circle, rgba(2, 0, 36, 0) 0, #fafafa 100%);
+  background: radial-gradient(circle, #0b0c3a 0%, #03020d 80%, #000000 100%);
   position: absolute;
   content: "";
-  z-index: 2;
+  z-index: 1;
   width: 100%;
   height: 100%;
   top: 0;
@@ -30,14 +30,15 @@
 
 .main:after {
   content: "";
-  background-image: url("/assets/images/grid.svg");
-  z-index: 1;
+  background-image: url('../public/assets/images/grid.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 2;
   position: absolute;
   width: 100%;
   height: 100%;
-  top: 0;
-  opacity: 0.4;
-  filter: invert(1);
+  opacity: 0.5;
 }
 
 .gradient {
@@ -47,15 +48,15 @@
   max-width: 640px;
   background-image: radial-gradient(
       at 27% 37%,
-      hsla(215, 98%, 61%, 1) 0px,
+      hsla(220, 80%, 30%, 1) 0px,
       transparent 0%
     ),
-    radial-gradient(at 97% 21%, hsla(125, 98%, 72%, 1) 0px, transparent 50%),
-    radial-gradient(at 52% 99%, hsla(354, 98%, 61%, 1) 0px, transparent 50%),
-    radial-gradient(at 10% 29%, hsla(256, 96%, 67%, 1) 0px, transparent 50%),
-    radial-gradient(at 97% 96%, hsla(38, 60%, 74%, 1) 0px, transparent 50%),
-    radial-gradient(at 33% 50%, hsla(222, 67%, 73%, 1) 0px, transparent 50%),
-    radial-gradient(at 79% 53%, hsla(343, 68%, 79%, 1) 0px, transparent 50%);
+    radial-gradient(at 97% 21%, hsla(240, 60%, 20%, 1) 0px, transparent 50%),  /* Dark Indigo */
+    radial-gradient(at 52% 99%, hsla(300, 60%, 25%, 1) 0px, transparent 50%),  /* Deep Purple */
+    radial-gradient(at 10% 29%, hsla(200, 50%, 35%, 1) 0px, transparent 50%),  /* Dark Teal */
+    radial-gradient(at 97% 96%, hsla(50, 70%, 60%, 1) 0px, transparent 50%),  /* Soft Yellow */
+    radial-gradient(at 33% 50%, hsla(330, 70%, 45%, 1) 0px, transparent 50%),  /* Muted Pink */
+    radial-gradient(at 79% 53%, hsla(220, 50%, 40%, 1) 0px, transparent 50%); /* Soft Blue */
   position: absolute;
   content: "";
   width: 100%;
@@ -64,6 +65,10 @@
   top: 80px;
   opacity: 0.15;
 }
+
+
+
+
 
 @media screen and (max-width: 640px) {
   .main {
@@ -78,44 +83,62 @@
 }
 
 .black_btn {
-  @apply rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-inter flex items-center justify-center;
+  @apply rounded-full border border-[#1f3b73] bg-[#1f3b73] py-1.5 px-5 text-[#e6e6fa] transition-all hover:bg-[#e6e6fa] hover:text-[#1f3b73] text-center text-sm font-inter flex items-center justify-center;
 }
+
+
 
 .outline_btn {
-  @apply rounded-full border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-sm font-inter flex items-center justify-center;
+  @apply rounded-full border border-[#e6e6fa] bg-transparent py-1.5 px-5 text-[#e6e6fa] transition-all hover:bg-[#3a3f5a] hover:text-[#e6e6fa] text-center text-sm font-inter flex items-center justify-center;
 }
+
+
 
 .head_text {
-  @apply mt-5 text-5xl font-extrabold leading-[1.15] text-black sm:text-6xl;
+  @apply mt-5 text-5xl font-extrabold leading-[1.15] text-[#e6e6fa] sm:text-6xl;
 }
 
+
 .orange_gradient {
-  @apply bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent;
+  filter: drop-shadow(0 0 2px rgba(0, 162, 255, 0.5)) drop-shadow(0 0 5px rgba(128, 0, 128, 0.3)); /* Subtle glow effect */
 }
+
+
 
 .green_gradient {
   @apply bg-gradient-to-r from-green-400 to-green-500 bg-clip-text text-transparent;
 }
 
+
 .blue_gradient {
-  @apply bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent;
-}
+  @apply bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent;
+  filter: drop-shadow(0 0 2px rgba(0, 162, 255, 0.5)) drop-shadow(0 0 5px rgba(128, 0, 128, 0.3)); /* Subtle glow effect */}
+
 
 .desc {
-  @apply mt-5 text-lg text-gray-600 sm:text-xl max-w-2xl;
+  @apply mt-5 text-lg text-white sm:text-xl max-w-2xl; /* Change gray-600 to white */
 }
+
 
 .search_input {
-  @apply block w-full rounded-md border border-gray-200 bg-white py-2.5 font-satoshi pl-5 pr-12 text-sm shadow-lg font-medium focus:border-black focus:outline-none focus:ring-0;
+  @apply block w-full rounded-md border border-gray-100 bg-gray-800 py-2.5 font-satoshi pl-5 pr-12 text-sm shadow-lg font-medium text-white placeholder-gray-500 focus:border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300;
 }
 
+
+
 .copy_btn {
-  @apply w-7 h-7 rounded-full bg-white/10 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur flex justify-center items-center cursor-pointer;
+  @apply w-7 h-7 rounded-full bg-gray-800 bg-opacity-70 shadow-[inset_0_0_10px_rgba(255,255,255,0.2)] backdrop-blur flex justify-center items-center cursor-pointer transition-all duration-200;
+}
+
+.copy_btn:hover {
+  @apply bg-opacity-100 shadow-[inset_0_0_20px_rgba(255,255,255,0.4)];
 }
 
 .glassmorphism {
-  @apply rounded-xl border border-gray-200 bg-white/20 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur p-5;
+  @apply rounded-xl border border-gray-700 bg-gray-800/30 shadow-[inset_0_0_30px_rgba(255,255,255,0.1)] backdrop-blur p-5;
 }
+
 
 .prompt_layout {
   @apply space-y-6 py-8 sm:columns-2 sm:gap-6 xl:columns-3;
@@ -128,30 +151,36 @@
 
 /* Form Component */
 .form_textarea {
-  @apply w-full flex rounded-lg h-[200px] mt-2 p-3 text-sm text-gray-500 outline-0;
+  @apply w-full flex rounded-lg h-[200px] mt-2 p-3 text-sm text-gray-200 bg-gradient-to-b from-[#0b0c3a] to-[#03020d] border border-gray-200 outline-0 shadow-lg;
 }
 
+
+
 .form_input {
-  @apply w-full flex rounded-lg mt-2 p-3 text-sm text-gray-500 outline-0;
+  @apply w-full flex rounded-lg mt-2 p-3 text-sm text-gray-200 bg-gradient-to-b from-[#0b0c3a] to-[#03020d] border border-gray-200 outline-0 shadow-lg;
 }
+
 
 /* Nav Component */
 .logo_text {
-  @apply max-sm:hidden font-satoshi font-semibold text-lg text-black tracking-wide;
+  @apply max-sm:hidden font-satoshi font-semibold text-lg text-white tracking-wide; /* Change to white for contrast */
 }
 
 .dropdown {
-  @apply absolute right-0 top-full mt-3 w-full p-5 rounded-lg bg-white min-w-[210px] flex flex-col gap-2 justify-end items-end z-10 border border-gray-200 shadow-lg;
+  @apply absolute right-0 top-full mt-3 w-full p-5 rounded-lg bg-white/10 backdrop-blur-md min-w-[210px] flex flex-col gap-2 justify-end items-end z-10 border border-gray-300 shadow-lg; /* Semi-transparent white background with blur */
 }
 
 .dropdown_link {
-  @apply text-sm font-inter text-gray-700 hover:text-gray-500 font-medium;
+  @apply text-sm font-inter text-white hover:text-gray-300 font-medium; /* Light text with hover effect */
 }
+
+
 
 /* PromptCard Component */
 .prompt_card {
-  @apply flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-[360px] w-full h-fit;
+  @apply flex-1 break-inside-avoid rounded-lg border border-gray-200 bg-white/10 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-[360px] w-full h-fit; /* Adjusted to a more transparent background */
 }
+
 
 .flex-center {
   @apply flex justify-center items-center;

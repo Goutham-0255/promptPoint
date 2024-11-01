@@ -50,15 +50,15 @@ handleSubmit,}) => {
         </label>
 
         <div className="flex-end mx-3 mb-5 gap-4"> 
-          <Link href='/' className="text-gray-500 text-sm">
+          <Link href='/' className="text-white text-sm">
             Cancel
           </Link>
 
           <button
             type="submit"
             disabled={submitting}
-            className="px-5 py-1.5 text-sm bg-primary-orange rounded-full text-white"
-          >
+            className="px-5 py-1.5 text-sm bg-opacity-40 bg-blue-700 backdrop-blur rounded-full text-white border border-blue-800"
+            >
             {submitting ? `${type}...` : type}
           </button>
 
