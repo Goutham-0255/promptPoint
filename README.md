@@ -1,31 +1,38 @@
-PromptPoint
-This is a web application built using Next.js, a powerful React framework that enables server-side rendering, static site generation, and other advanced features. This project was bootstrapped with create-next-app, providing a solid foundation to kickstart your web application development.
+# PromptPoint
 
-Table of Contents
-Features
-Getting Started
-Technologies Used
-Learning Resources
-Deployment
-Live Project
-Features
-User authentication via Google using NextAuth.js
-Ability to create, edit, and delete prompts
-User profiles to view and manage prompts
-Responsive design for desktop and mobile
-Optimized font loading with next/font
-Getting Started
+This is a web application built using [Next.js](https://nextjs.org/), a powerful React framework that enables server-side rendering, static site generation, and other advanced features. This project was bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app), providing a solid foundation to kickstart your web application development.
+
+## Table of Contents
+
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [Technologies Used](#technologies-used)
+- [Learning Resources](#learning-resources)
+- [Deployment](#deployment)
+- [Live Project](#live-project)
+
+## Features
+
+- User authentication via Google using NextAuth.js
+- Ability to create, edit, and delete prompts
+- User profiles to view and manage prompts
+- Responsive design for desktop and mobile
+- Optimized font loading with `next/font`
+
+## Getting Started
+
 To get started with the development of this project, follow these steps:
 
-Prerequisites
-Ensure you have Node.js installed on your machine. You can download it from Node.js official website.
+### Prerequisites
 
-Installation
-Clone the repository:
+Ensure you have Node.js installed on your machine. You can download it from [Node.js official website](https://nodejs.org/).
 
-bash
-Copy code
-git clone https://github.com/yourusername/prompt-point.git
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/yourusername/prompt-point.git
 Navigate into the project directory:
 
 bash
@@ -79,4 +86,7 @@ For more details on deploying your Next.js application, refer to the Next.js Dep
 Live Project
 You can check out the live version of PromptPoint here: Live Project Link
 
-Feel free to adjust any sections or details as needed!
+css
+Copy code
+
+Feel free to modify any sections to better fit your project!
