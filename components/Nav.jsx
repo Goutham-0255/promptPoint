@@ -31,7 +31,7 @@ const Nav = () => {
             alt='Promtopia Logo'
             width={60}
             height={60}
-            className='logo_image object-contain'
+            className='object-contain'
           />
        
         <p className='logo_text'>PromptPoint</p>
