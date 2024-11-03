@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import PromptCard from "./PromptCard";
 
@@ -47,18 +47,17 @@ const Feed = () => {
     );
   };
 
-  const handleSearchChange = (e) => {
-    clearTimeout(searchTimeout);
-    setSearchText(e.target.value);
+  const debounceRef = useRef(null);
 
-    // debounce method
-    setSearchTimeout(
-      setTimeout(() => {
-        const searchResult = filterPrompts(e.target.value);
-        setSearchedResults(searchResult);
-      }, 500)
-    );
-  };
+const handleSearchChange = (e) => {
+  clearTimeout(debounceRef.current); // Clear previous timeout
+  setSearchText(e.target.value);
+
+  debounceRef.current = setTimeout(() => {
+    const searchResult = filterPrompts(e.target.value);
+    setSearchedResults(searchResult);
+  }, 500);
+};
 
   const handleTagClick = (tagName) => {
     setSearchText(tagName);
