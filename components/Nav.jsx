@@ -20,7 +20,7 @@ const Nav = () => {
     }
 
     setUpProviders()
-  }, [])
+  }, [session])
 
   return (
     <nav className='flex-between w-full mb-16 pt-3'>
@@ -31,7 +31,7 @@ const Nav = () => {
             alt='Promtopia Logo'
             width={60}
             height={60}
-            className='object-contain'
+            className='logo_image object-contain'
           />
        
         <p className='logo_text'>PromptPoint</p>
